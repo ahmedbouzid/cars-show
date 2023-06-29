@@ -1,12 +1,12 @@
 'use client'
 import { CustomButtonProps } from '@/types';
 import Image  from 'next/image';
-function CustomButton({title , containerStyles , handleClick} :CustomButtonProps) {
+function CustomButton({title , containerStyles , handleClick , btnType} :CustomButtonProps) {
     return (
         <div>
            <button 
            disabled = {false}
-           type={'button'}
+           type={ btnType || 'button'}
            className={`custom-btn w-20 h-10 ${containerStyles}`}
             onClick={handleClick}
            >
