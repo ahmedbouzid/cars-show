@@ -20,7 +20,17 @@ function Hero( ) {
                 containerStyles="bg-primary-blue text-white rounded-full mt-15 p-30"
                 handleClick={handleScrool}
                 />
+
             </div>
+            <div className="hero__image_container">
+                <div className="hero__image">
+                    <Image  src="/hero.png" alt='hero' 
+                     fill   className='object-contain'
+                    />
+            <div className="hero__image-overlay"></div>
+
+                </div>
+            </div> 
         </div>
     );
 }

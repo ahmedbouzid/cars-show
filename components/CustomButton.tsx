@@ -14,11 +14,7 @@ function CustomButton({title , containerStyles , handleClick} :CustomButtonProps
             {title}
            </span>
            </button>
-           <div className="hero__image_container">
-                <div className="hero__image">
-                    
-                </div>
-            </div> 
+
         </div>
     );
 }
