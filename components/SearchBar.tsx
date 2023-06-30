@@ -12,7 +12,7 @@ function SearchBar() {
         <form className='serachbar' onSubmit={handleSearch} >
             <div className="searchbar__item">
                 <SearchManuFacture
-                manufacture={setmanufacture}
+                manufacture={setmanufacture} 
                 setmanufacture={setmanufacture }
                  />
             </div>

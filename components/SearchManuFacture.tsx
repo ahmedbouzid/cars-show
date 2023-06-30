@@ -15,7 +15,7 @@ const SearchManuFacture = ({manufacture,setmanufacture}:SearchmanuFactureProps) 
     ))
     return ( 
         <div className="search-manufacturer">
-            <Combobox>
+            <Combobox /* value={manufacture} onChange={setmanufacture} */>
                 <div className="relative w-full">
                 <Combobox.Button className="absolute top-[14px]">
                     <Image src="/car-logo.svg"  
