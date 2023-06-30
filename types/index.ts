@@ -1,10 +1,14 @@
+import { BlobOptions } from "buffer";
 import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
     title : string ;
     containerStyles?: string ;
     handleClick ?: MouseEventHandler<HTMLButtonElement> ;
-    btnType : "button" | "submit"
+    btnType ?: "button" | "submit" ;
+    textStyles?: string ;
+    rightIcon?: string ;
+    isDisabled ?:boolean ;
 }
 export interface SearchmanuFactureProps {
     manufacture : string ;

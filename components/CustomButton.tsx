@@ -1,7 +1,7 @@
 'use client'
 import { CustomButtonProps } from '@/types';
 import Image  from 'next/image';
-function CustomButton({title , containerStyles , handleClick , btnType} :CustomButtonProps) {
+function CustomButton({title , containerStyles , handleClick , btnType ,textStyles ,rightIcon} :CustomButtonProps) {
     return (
         <div>
            <button 
@@ -10,9 +10,15 @@ function CustomButton({title , containerStyles , handleClick , btnType} :CustomB
            className={`custom-btn w-20 h-10 ${containerStyles}`}
             onClick={handleClick}
            >
-           <span className={`flex-1`}>
+           <span className={`flex-1 ${textStyles}`}>
             {title}
            </span>
+           {rightIcon && (
+            <div className='relative w-6 h-6'>
+                <Image src={rightIcon}  alt='right Icon' 
+                fill className='object-contain'/>
+            </div>
+           )}
            </button>
 
         </div>
