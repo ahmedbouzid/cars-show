@@ -11,7 +11,7 @@ export interface CustomButtonProps {
     isDisabled ?:boolean ;
 }
 export interface SearchmanuFactureProps {
-    manufacture : string ;
+    manufacture ?: string;
     setmanufacture : (manufacture:string) => void ;
 }
 export interface CarProps {
