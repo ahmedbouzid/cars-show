@@ -7,13 +7,14 @@ interface CarCardProps {
 }
 import CustomButton from "./CustomButton";
 import { calculateCarRent } from "@/utils";
+import CardDertails from "./CardDertails";
 function CarCard({car} : CarCardProps) {
     const {city_mpg,year,make,model,transmission,drive} = car;
     const carRent = calculateCarRent(city_mpg,year)
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="car-card-group">
+        <div className="car-card group">
             <div className="car-card__content">
                 <h2 className="car-card__content-title">
                     {make} {model}
@@ -35,7 +36,7 @@ function CarCard({car} : CarCardProps) {
             <div className="relative flex w-full mt-2" >
                 <div className="flex group-hover:invisible w-full justify-between text-gray">
                     <div className="flex flex-col justify-center items-center gap-2">
-                        <Image src='/steering.svg' alt="fff"  width={20} height={20}
+                        <Image src='/steering-wheel.svg' alt="fff"  width={20} height={20}
                          />
                          <p className="text-[14px]">
                             {transmission === "a" ? 'Automatic' : 'Manual'}
@@ -68,6 +69,7 @@ function CarCard({car} : CarCardProps) {
           />
         </div>
             </div>
+            <CardDertails />
         </div>
     );
 }
