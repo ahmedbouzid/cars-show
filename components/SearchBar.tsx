@@ -18,20 +18,21 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = () => {
-  const [manufacturer, setManuFacturer] = useState("");
-  const [model, setModel] = useState("");
+const SearchBar = ({setManufacturer , setModel}) => {
+  const [searchManufacturer, setSearchManuFacturer] = useState("");
+  const [searchModel, setSearchModel] = useState("");
 
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (manufacturer.trim() === "" && model.trim() === "") {
+    if (searchManufacturer.trim() === "" && searchModel.trim() === "") {
       return alert("Please provide some input");
     }
 
-    updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
+    setModel( searchModel),
+    setManufacturer( searchManufacturer);
   };
 
   const updateSearchParams = (model: string, manufacturer: string) => {
@@ -62,8 +63,8 @@ const SearchBar = () => {
     <form className='searchbar' onSubmit={handleSearch}>
       <div className='searchbar__item'>
         <SearchManuFacture
-          manufacture={manufacturer}
-          setmanufacture={setManuFacturer}
+          selected={searchManufacturer}
+          setSelected={setSearchManuFacturer}
         />
         <SearchButton otherClasses='sm:hidden' />
       </div>
@@ -78,7 +79,7 @@ const SearchBar = () => {
         <input
           type='text'
           name='model'
-          value={model}
+          value={searchModel}
           onChange={(e) => setModel(e.target.value)}
           placeholder='Tiguan...'
           className='searchbar__input'
