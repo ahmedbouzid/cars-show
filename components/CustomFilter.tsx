@@ -17,7 +17,8 @@ function CustomFilter( {title,options} : CustomFilterProps) {
                     <div className='relative w-fit z-10'>
                         <Listbox.Button className="custom-bilter__btn">
 
-                            <span>Filter</span>
+                            <span className='block truncate'> {selected.title} </span>
+                            <Image src="chevron-up-down.svg" width={20} height={20} alt='Image' className='ml-4 object-contain' /> 
                         </Listbox.Button>
 
                     </div>
